@@ -1,0 +1,10 @@
+<form [formGroup]="login" (ngSubmit)="onSubmit()" novalidate>
+    <div>
+        <label>Nombre:</label>
+            <input type="text" formControlName="nombre" [ngClass]="{'invalido': login.get('nombre')?.touched && login.get('nombre')?.invalid}">
+            <div class="error" *ngIf="login">
+
+            </div>
+    </div>
+
+</form>
