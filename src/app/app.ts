@@ -1,14 +1,14 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
 import { Libro } from './libro';
 import { LibroService } from './libro-service';
 import { Login } from "./login/login";
-import { bootstrapAppScopedEarlyEventContract } from '@angular/core/primitives/event-dispatch';
 import { bootstrapApplication } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Login],
+  standalone: true,
+  imports: [CommonModule, Login],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -22,6 +22,7 @@ export class App {
     this.loginEnviado = true;
   }
 
+  constructor(){}
 
 }
 

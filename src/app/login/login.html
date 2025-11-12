@@ -1,10 +1,22 @@
 <form [formGroup]="login" (ngSubmit)="onSubmit()" novalidate>
     <div>
-        <label>Nombre:</label>
-            <input type="text" formControlName="nombre" [ngClass]="{'invalido': login.get('nombre')?.touched && login.get('nombre')?.invalid}">
-            <div class="error" *ngIf="login">
-
-            </div>
+        <label>Email:</label>
+            <input type="text" formControlName="correo" [ngClass]="{'invalido': login.get('correo')?.touched && login.get('correo')?.invalid}">
+        <div class="error" *ngIf="login.get('correo')?.touched && login.get('correo')?.invalid">
+            <small *ngIf="login.get('correo')?.errors?.['required']">El nombre es obligatorio</small>
+            <small *ngIf="login.get('correo')?.errors?.['email']">Debe ser un correo electrónico váido</small>
+        </div>
     </div>
 
+    <div>
+        <label>Contraseña:</label>
+            <input type="password" formControlName="contrasena" [ngClass]="{'invalido' : login.get('contrasena')?.touched && login.get('contrasena')?.invalid}">
+        <div>
+            <small *ngIf="login.get('contrasena')?.errors?.['required']">La contraseña es obligatoria.</small>
+            <small *ngIf="login.get('contrasena')?.errors?.['minlength(8)']">Debe tener al menos 8 caracteres.</small>
+            <small *ngIf="login.get('contrasena')?.errors?.['pattern(/.*[0-9].*/)']">Debe tener al menos 1 número.</small>
+        </div>
+    </div>
+
+    <button type="submit">Enviar</button>
 </form>

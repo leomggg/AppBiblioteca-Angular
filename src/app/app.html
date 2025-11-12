@@ -1,3 +1,7 @@
-<div *ngIf="!formEnviado">
+<div *ngIf="!loginEnviado">
   <app-login (enviado)="mostrarPag()"></app-login>
+</div>
+
+<div *ngIf="loginEnviado">
+  <p>Hola</p>
 </div>

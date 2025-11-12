@@ -1,9 +1,7 @@
 import { Libro } from "./libro";
 
 export class LibroService {
-    libros: Libro [] = [
-
-    ]
+    libros: Libro [] = [ ];
 
     getLista() {
         return this.libros;
@@ -16,5 +14,4 @@ export class LibroService {
     anadirLibro(libro: Libro) {
         this.libros.push(libro);
     }
-
 }
