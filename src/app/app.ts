@@ -1,21 +1,18 @@
 import { Component } from '@angular/core';
-import { Libro } from './libro';
-import { LibroService } from './libro-service';
 import { Login } from "./login/login";
 import { bootstrapApplication } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { HijoFormulario } from './hijo-formulario/hijo-formulario';
+import { HijoTabla } from './hijo-tabla/hijo-tabla';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, Login],
+  imports: [CommonModule, Login, HijoFormulario, HijoTabla],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  service = new LibroService;
-  libros: Libro[] = this.service.getLista();
-
   loginEnviado = false;
 
   mostrarPag() {
@@ -23,7 +20,6 @@ export class App {
   }
 
   constructor(){}
-
 }
 
 bootstrapApplication(App).catch(err => console.error(err));

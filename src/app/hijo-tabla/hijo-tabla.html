@@ -1,0 +1,23 @@
+<table>
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Autor</th>
+      <th>ISBN</th>
+      <th>Fecha Préstamo</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let libro of libros$ | async"
+        [ngClass]="{ 'vencido': isVencido(libro.FechaPrestamo) }">
+      <td>{{ libro.Titulo }}</td>
+      <td>{{ libro.Autor }}</td>
+      <td>{{ libro.ISBN }}</td>
+      <td>{{ libro.FechaPrestamo | date:'longDate' }}</td>
+      <td>
+        <button (click)="eliminarLibro(libro.ISBN)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

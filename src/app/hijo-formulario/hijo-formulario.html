@@ -1,0 +1,7 @@
+<form (ngSubmit)="anadirPrestamo()">
+  <input type="number" [(ngModel)]="isbn" name="isbn" placeholder="ISBN" required>
+  <input type="text" [(ngModel)]="titulo" name="titulo" placeholder="Título" required>
+  <input type="text" [(ngModel)]="autor" name="autor" placeholder="Autor" required>
+  <input type="date" [(ngModel)]="fecha" name="fecha" required>
+  <button type="submit">Añadir libro</button>
+</form>

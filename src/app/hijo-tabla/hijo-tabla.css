@@ -1,0 +1,18 @@
+.vencido {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: darkred;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  cursor: pointer;
+}
