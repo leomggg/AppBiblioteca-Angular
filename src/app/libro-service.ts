@@ -1,6 +1,6 @@
 import { Libro } from "./libro";
 import { Injectable } from "@angular/core";
-import { Subject, Observable } from "rxjs";
+import { Subject, Observable, BehaviorSubject } from "rxjs";
 
 @Injectable({ providedIn: 'root' })
 export class LibroService {
@@ -13,7 +13,7 @@ export class LibroService {
     ];
 
     //! Emisor de cambios
-    librosSubject = new Subject<Libro[]>(); 
+    librosSubject = new BehaviorSubject<Libro[]>(this.libros); 
 
     //! Observable público que la tabla consumirá
     get libros$(): Observable<Libro[]> {

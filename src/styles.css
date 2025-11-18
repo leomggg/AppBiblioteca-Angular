@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+.ratonEncima {
+  background-color: #eef;
+  transform: scale(1.02);
+  transition: all 0.2s ease;
+}

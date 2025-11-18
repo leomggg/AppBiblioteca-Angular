@@ -12,6 +12,7 @@ import { HijoTabla } from './hijo-tabla/hijo-tabla';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
+
 export class App {
   loginEnviado = false;
 

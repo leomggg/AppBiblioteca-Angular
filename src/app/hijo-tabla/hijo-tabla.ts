@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 import { Libro } from '../libro';
 import { LibroService } from '../libro-service';
+import { ResaltarDirective } from "../resaltar-directive";
 
 @Component({
   selector: 'app-hijo-tabla',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ResaltarDirective],
   templateUrl: './hijo-tabla.html',
   styleUrl: './hijo-tabla.css',
 })
@@ -20,6 +21,8 @@ export class HijoTabla {
     this.libros$ = this.libroService.libros$; //! Observable de libros que se actualiza automáticamente
   }
 
+
+  //! La condicion para ponerlo en rojo es que hayan pasado mas de 6 meses desde que se prestó
   isVencido(fecha?: Date): boolean {
     if (!fecha) return false;
 

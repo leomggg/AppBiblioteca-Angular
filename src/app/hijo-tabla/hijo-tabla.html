@@ -11,10 +11,10 @@
   <tbody>
     <tr *ngFor="let libro of libros$ | async"
         [ngClass]="{ 'vencido': isVencido(libro.FechaPrestamo) }">
-      <td>{{ libro.Titulo }}</td>
-      <td>{{ libro.Autor }}</td>
-      <td>{{ libro.ISBN }}</td>
-      <td>{{ libro.FechaPrestamo | date:'longDate' }}</td>
+      <td appResaltarDirective>{{ libro.Titulo }}</td>
+      <td appResaltarDirective>{{ libro.Autor }}</td>
+      <td appResaltarDirective>{{ libro.ISBN }}</td>
+      <td appResaltarDirective>{{ libro.FechaPrestamo | date:'longDate' }}</td>
       <td>
         <button (click)="eliminarLibro(libro.ISBN)">Eliminar</button>
       </td>
