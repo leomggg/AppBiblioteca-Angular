@@ -4,11 +4,12 @@ import { Observable } from 'rxjs';
 import { Libro } from '../libro';
 import { LibroService } from '../libro-service';
 import { ResaltarDirective } from "../resaltar-directive";
+import { FechaBonitaPipePipe } from '../fecha-bonita-pipe-pipe';
 
 @Component({
   selector: 'app-hijo-tabla',
   standalone: true,
-  imports: [CommonModule, ResaltarDirective],
+  imports: [CommonModule, ResaltarDirective, FechaBonitaPipePipe],
   templateUrl: './hijo-tabla.html',
   styleUrl: './hijo-tabla.css',
 })

@@ -14,7 +14,7 @@
       <td appResaltarDirective>{{ libro.Titulo }}</td>
       <td appResaltarDirective>{{ libro.Autor }}</td>
       <td appResaltarDirective>{{ libro.ISBN }}</td>
-      <td appResaltarDirective>{{ libro.FechaPrestamo | date:'longDate' }}</td>
+      <td appResaltarDirective>{{ libro.FechaPrestamo | fechaBonitaPipe }}</td>
       <td>
         <button (click)="eliminarLibro(libro.ISBN)">Eliminar</button>
       </td>
